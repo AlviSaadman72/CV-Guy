@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CV Guy - Resume Builder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"> <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme"> <header class="main-header">
+    <h1>CV Guy - Resume Builder</h1>
+    <button id="themeToggleButton" class="theme-toggle">
+      <span class="icon">💡</span> Toggle Theme
+    </button>
+  </header>
+
+  <div class="main-content-wrapper">
+    <div class="input-section">
+      <h2 class="section-title">Your Details</h2>
+      <div class="form-group">
+        <label for="profileImage">Profile Image:</label>
+        <input type="file" id="profileImage" accept="image/*">
+        <div id="imageMessage" class="validation-message"></div>
+      </div>
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" placeholder="John Doe">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="john.doe@example.com">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" placeholder="+1 (123) 456-7890">
+      </div>
+      <div class="form-group">
+        <label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" placeholder="American">
+      </div>
+      <div class="form-group">
+        <label for="linkedin">LinkedIn URL:</label>
+        <input type="url" id="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+      </div>
+      <div class="form-group">
+        <label for="github">GitHub URL:</label>
+        <input type="url" id="github" placeholder="https://github.com/yourprofile">
+      </div>
+      <div class="form-group">
+        <label for="careerObjective">Career Objective:</label>
+        <textarea id="careerObjective" rows="5" placeholder="A highly motivated and results-oriented professional..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="skills">Skills (comma separated):</label>
+        <input type="text" id="skills" placeholder="JavaScript, React, CSS, HTML, Node.js">
+      </div>
+
+      <h2 class="section-title">Education</h2>
+      <div id="educationContainer"></div>
+      <button id="addEducation" class="btn btn-add">Add Education</button>
+
+      <h2 class="section-title">Work Experience</h2>
+      <div id="workExperienceContainer"></div>
+      <button id="addWorkExperience" class="btn btn-add">Add Work Experience</button>
+
+      <div class="form-group">
+        <br>
+        <button id="downloadPdfButton" class="btn btn-primary">Download as PDF</button>
+        <button id="logoutButton" class="btn btn-secondary">Logout</button>
+      </div>
+    </div>
+
+    <div class="preview-section" id="resumeOutput">
+      <div class="resume-template">
+        <div class="header-section">
+          <img id="outputImage" class="profile-pic" alt="Profile Picture" style="display: none;">
+          <div>
+            <h2 id="outputName">Your Name</h2>
+            <div class="contact-info">
+              <span id="outputEmail"></span>
+              <span id="outputPhone"></span>
+              <span id="outputNationality"></span>
+              <span id="outputLinkedin"></span>
+              <span id="outputGithub"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>Career Objective</h3>
+          <p id="outputSummary">Your career objective will appear here.</p>
+        </div>
+
+        <div class="section-block">
+          <h3>Education</h3>
+          <div id="outputEducation">
+            <p class="placeholder-text">Education details will appear here.</p>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>Work Experience</h3>
+          <div id="outputWorkExperience">
+            <p class="placeholder-text">Work experience details will appear here.</p>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>Skills</h3>
+          <div id="outputSkills">
+            <ul class="skills-list-output">
+              <li class="placeholder-text">Skills will appear here.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
