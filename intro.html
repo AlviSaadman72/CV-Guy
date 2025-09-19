@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Guy - Create Your Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <div id="digital-clock"></div>
+        <h1>CV Guy</h1>
+        <button id="theme-toggle" class="green-btn">Toggle Theme</button>
+    </header>
+
+    <main class="container">
+        <section class="form-section">
+            <h2>Create Your CV</h2>
+            <form id="cv-form">
+                <div class="form-group">
+                    <label for="image-upload">Insert Image (jpg/png, max 2mb)</label>
+                    <input type="file" id="image-upload" name="image" accept="image/jpeg, image/png" required>
+                </div>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobileNumber">Mobile Number</label>
+                    <input type="tel" id="mobileNumber" name="mobileNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="homeAddress">Home Address</label>
+                    <input type="text" id="homeAddress" name="homeAddress" required>
+                </div>
+                <div class="form-group">
+                    <label for="nationalId">National ID</label>
+                    <input type="text" id="nationalId" name="nationalId" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="linkedInId">LinkedIn ID (Optional)</label>
+                    <input type="text" id="linkedInId" name="linkedInId">
+                </div>
+                <div class="form-group">
+                    <label for="gitHubId">GitHub ID (Optional)</label>
+                    <input type="text" id="gitHubId" name="gitHubId">
+                </div>
+
+                <h3>Educational Information</h3>
+                <div id="education-container">
+                    <div class="education-item">
+                        <input type="text" name="degree" placeholder="Degree" required>
+                        <input type="text" name="institution" placeholder="Institution Name" required>
+                        <input type="text" name="result" placeholder="Result" required>
+                        <input type="number" name="passingYear" placeholder="Passing Year" required>
+                    </div>
+                </div>
+                <button type="button" class="add-btn green-btn" onclick="addEducation()">Add Education</button>
+
+                <h3>Academic Projects (Optional)</h3>
+                <div id="projects-container"></div>
+                <button type="button" class="add-btn green-btn" onclick="addProject()">Add Project</button>
+                
+                <h3>Working Experience (Optional)</h3>
+                <div id="experience-container"></div>
+                <button type="button" class="add-btn green-btn" onclick="addExperience()">Add Experience</button>
+
+                <h3>Skills</h3>
+                <div id="skills-container"></div>
+                <button type="button" class="add-btn green-btn" onclick="addSkill()">Add Skill</button>
+
+                <h3>References</h3>
+                <div id="references-container">
+                    <div class="reference-item">
+                        <input type="text" name="referenceName" placeholder="Name" required>
+                        <input type="text" name="referenceContact" placeholder="Contact Information" required>
+                    </div>
+                </div>
+                <button type="button" class="add-btn green-btn" onclick="addReference()">Add Reference</button>
+                
+                <button type="button" class="submit-btn green-btn" onclick="updatePreview()">Save & Preview</button>
+                <button type="button" class="download-btn green-btn" onclick="downloadPDF()">Download as PDF</button>
+            </form>
+        </section>
+        
+        <aside class="preview-section">
+            <h2>Live Preview</h2>
+            <div id="cv-preview">
+                </div>
+        </aside>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
